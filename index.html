@@ -1,108 +1,242 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>Інтернет — сучасний світ</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            color: #333;
-        }
-        header {
-            background: #1e88e5;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background: #1565c0;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        main {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        section {
-            margin-bottom: 30px;
-        }
-        h2 {
-            color: #1e88e5;
-        }
-        footer {
-            background: #1e88e5;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Шкільний проєкт — Інтернет</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+    --bg:#121212;
+    --text:#e0e0e0;
+    --card:#1e1e1e;
+    --accent:#64b5f6;
+}
+body.light{
+    --bg:#f4f6f8;
+    --text:#222;
+    --card:#ffffff;
+    --accent:#1565c0;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:.4s;
+}
+
+/* HEADER — КОЛІР НЕ ЗМІНЮЄТЬСЯ */
+header{
+    background:linear-gradient(135deg,#0d47a1,#1976d2);
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+    position:relative;
+}
+header h1, header p{
+    color:white; /* ФІКС */
+}
+
+.toggle{
+    position:absolute;
+    right:15px;
+    top:15px;
+    border:none;
+    background:#00000055;
+    color:white;
+    padding:8px 14px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+nav{
+    background:var(--card);
+    text-align:center;
+    padding:12px;
+    position:sticky;
+    top:0;
+}
+nav a{
+    color:var(--accent);
+    margin:0 12px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+main{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+section{
+    background:var(--card);
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:40px;
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+section.show{opacity:1; transform:none;}
+
+h2{color:var(--accent);}
+img{width:100%; border-radius:12px; margin:15px 0;}
+
+form input, form button{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:8px;
+    border:none;
+}
+form button{
+    background:#1976d2;
+    color:white;
+    cursor:pointer;
+}
+
+footer{
+    background:var(--card);
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+    color:#aaa;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>Інтернет</h1>
-    <p>Глобальна мережа, що об’єднує світ</p>
+<button class="toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+<h1>Інтернет</h1>
+<p id="type"></p>
 </header>
 
 <nav>
-    <a href="#what">Що таке Інтернет</a>
-    <a href="#history">Історія</a>
-    <a href="#uses">Використання</a>
-    <a href="#future">Майбутнє</a>
+<a href="#info">Що таке</a>
+<a href="#creator">Хто створив</a>
+<a href="#how">Як працює</a>
+<a href="#register">Реєстрація</a>
 </nav>
 
 <main>
-    <section id="what">
-        <h2>Що таке Інтернет?</h2>
-        <p>
-            Інтернет — це глобальна мережа комп’ютерів, яка дозволяє обмінюватися
-            інформацією, спілкуватися та отримувати доступ до різних сервісів.
-        </p>
-    </section>
 
-    <section id="history">
-        <h2>Коротка історія</h2>
-        <p>
-            Інтернет виник у 1960-х роках як військовий проєкт ARPANET.
-            З часом він став доступним для всього світу і повністю змінив життя людей.
-        </p>
-    </section>
+<section id="info">
+<h2>Що таке Інтернет?</h2>
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+<p>
+Інтернет — це глобальна комп’ютерна мережа, яка з’єднує мільярди пристроїв по всьому світу.
+Він дозволяє передавати дані, спілкуватися, навчатися, працювати та розважатися.
+</p>
+<p>
+Основні сервіси Інтернету: вебсайти, електронна пошта, соціальні мережі,
+відеозв’язок, хмарні технології.
+</p>
+</section>
 
-    <section id="uses">
-        <h2>Для чого використовують Інтернет</h2>
-        <ul>
-            <li>Спілкування (соцмережі, месенджери)</li>
-            <li>Навчання та освіта</li>
-            <li>Робота та бізнес</li>
-            <li>Розваги (відео, ігри, музика)</li>
-        </ul>
-    </section>
+<section id="creator">
+<h2>Хто створив Інтернет?</h2>
+<img src="https://images.unsplash.com/photo-1526378722445-4bda1d6b1c7d">
+<p>
+Інтернет виник у США у 1969 році як військовий проєкт <b>ARPANET</b>.
+Його розробляли вчені за підтримки Міністерства оборони США.
+</p>
+<p>
+Важливу роль відіграли:
+</p>
+<ul>
+<li>Леонард Клейнрок</li>
+<li>Вінтон Серф</li>
+<li>Роберт Кан</li>
+</ul>
+<p>
+Саме Вінтона Серфа та Роберта Кана вважають «батьками Інтернету».
+</p>
+</section>
 
-    <section id="future">
-        <h2>Майбутнє Інтернету</h2>
-        <p>
-            У майбутньому Інтернет стане ще швидшим, розумнішим та безпечнішим,
-            з розвитком штучного інтелекту, IoT та віртуальної реальності.
-        </p>
-    </section>
+<section id="how">
+<h2>Як працює Інтернет?</h2>
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<p>
+Інтернет працює за принципом передачі пакетів даних.
+Інформація розбивається на маленькі частини,
+які передаються через сервери та маршрутизатори.
+</p>
+<p>
+Для цього використовуються протоколи <b>TCP/IP</b>.
+Коли ти вводиш адресу сайту — браузер звертається до сервера,
+який надсилає потрібні дані.
+</p>
+</section>
+
+<section id="register">
+<h2>Реєстрація користувача</h2>
+<p>Дані зберігаються у браузері (localStorage)</p>
+
+<form onsubmit="registerUser(event)">
+<input type="text" id="name" placeholder="Ім'я" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="password" id="password" placeholder="Пароль" required>
+<button type="submit">Зареєструватися</button>
+</form>
+
+<p id="result"></p>
+</section>
+
 </main>
 
 <footer>
-    <p>© 2025 Сайт про Інтернет</p>
+<p>
+Шкільний проєкт з інформатики<br>
+Учень: ____________ | Клас: ____<br>
+2025 рік
+</p>
 </footer>
+
+<script>
+// тема
+function toggleTheme(){
+    document.body.classList.toggle("light");
+}
+
+// анімація секцій
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+    sections.forEach(s=>{
+        if(s.getBoundingClientRect().top<window.innerHeight*0.85){
+            s.classList.add("show");
+        }
+    });
+});
+
+// друк тексту
+const txt="Глобальна мережа, що змінила світ";
+let i=0;
+function type(){
+    if(i<txt.length){
+        document.getElementById("type").innerHTML+=txt[i];
+        i++;
+        setTimeout(type,60);
+    }
+}
+type();
+
+// реєстрація + "база даних"
+function registerUser(e){
+    e.preventDefault();
+    let users=JSON.parse(localStorage.getItem("users"))||[];
+    users.push({
+        name:name.value,
+        email:email.value
+    });
+    localStorage.setItem("users",JSON.stringify(users));
+    result.innerText="✅ Користувач збережений!";
+}
+</script>
 
 </body>
 </html>
