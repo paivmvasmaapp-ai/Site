@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Адмін панель</title>
+
+<style>
+body{font-family:Arial;background:#121212;color:#eee;padding:20px}
+h1{color:#64b5f6}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #555;padding:10px}
+th{background:#1976d2}
+</style>
+</head>
+<body>
+
+<h1>Адмін-панель</h1>
+
+<table>
+<thead>
+<tr><th>ID</th><th>Імʼя</th><th>Email</th></tr>
+</thead>
+<tbody id="users"></tbody>
+</table>
+
+<script>
+const API="https://YOUR-BACKEND-URL"; // 🔴 заміни
+
+fetch(API+"/users")
+ .then(r=>r.json())
+ .then(data=>{
+   users.innerHTML=data.map(u=>`
+     <tr>
+       <td>${u.id}</td>
+       <td>${u.name}</td>
+       <td>${u.email}</td>
+     </tr>`).join("");
+ });
+</script>
+
+</body>
+</html>
